@@ -42,11 +42,11 @@ const Player = () => {
               <Card.Subtitle className="mb-2 text-muted">{currentSong.artist.name}</Card.Subtitle>
               <Card.Text>
                 <Button variant="success" onClick={handlePlay}>Play</Button>
-                <Button variant="secondary" onClick={handlePause} className="ml-2">Pause</Button>
+                <Button variant="secondary" onClick={handlePause} className="ml-2 mx-2">Pause</Button>
               </Card.Text>
             </>
           ) : (
-            <Card.Text>Seleziona una canzone per iniziare a riprodurre</Card.Text>
+            <Card.Text>Seleziona una canzone </Card.Text>
           )}
         </Card.Body>
       </Card>
