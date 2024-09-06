@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from '../reducers'; 
+import songReducer from '../slice/SongSlice'; 
 
 const store = configureStore({
-  reducer: rootReducer, 
+  reducer: {
+    songs: songReducer, 
+  },
 });
 
 export default store;
+

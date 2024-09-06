@@ -1,24 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Search from './Components/Search';
-import SongList from './Components/SongList';
-import Player from './Components/Player';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MyNavbar from './Components/MyNavbar';
+import Home from './Components/Home';
+import Search from './Components/Search';
+import Library from './Components/Library';
 
 const App = () => {
   return (
-    <Router>
-      <div className="app">
-        <MyNavbar />
+    <BrowserRouter>
+      <MyNavbar />
+      <div className="container mt-4">
         <Routes>
-          <Route path="/" element={<Search />} />
-          <Route path="/songs" element={<SongList />} />
-          <Route path="/player" element={<Player />} />
-          <Route path="*" element={<h1>404 - Not Found</h1>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/library" element={<Library />} />
         </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 };
 
-export default App;
+export default App;

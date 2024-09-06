@@ -9,7 +9,7 @@ const Player = () => {
       {currentSong ? (
         <>
           <h3>{currentSong.title}</h3>
-          <p>{currentSong.artist}</p>
+          <p>{currentSong.artist.name}</p>
         </>
       ) : (
         <p>Seleziona una canzone per iniziare a riprodurre</p>
@@ -18,4 +18,4 @@ const Player = () => {
   );
 };
 
-export default Player;
+export default Player;

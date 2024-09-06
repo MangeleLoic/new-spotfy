@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchSongs } from '../redux/actions';
-
+import { fetchSongs } from '../redux/slice/SongSlice';  
 
 
 const Search = () => {
