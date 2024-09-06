@@ -1,25 +1,23 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchSongs } from '../redux/slice/SongSlice';  
-
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchSongs } from '../redux/Slice/SongSlice'; 
 
 const Search = () => {
-  const [query, setQuery] = useState('');
   const dispatch = useDispatch();
+  const songs = useSelector(state => state.songs.songs);
 
-  const handleSearch = () => {
+  const handleSearch = (query) => {
     dispatch(fetchSongs(query));
   };
 
   return (
-    <div className="search">
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Cerca una canzone..."
-      />
-      <button onClick={handleSearch}>Cerca</button>
+    <div>
+      <input type="text" placeholder="Search for a song..." onChange={(e) => handleSearch(e.target.value)} />
+      <div>
+        {songs.map(song => (
+          <div key={song.id}>{song.title}</div>
+        ))}
+      </div>
     </div>
   );
 };
