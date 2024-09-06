@@ -46,8 +46,7 @@ const Search = () => {
 
      
       {error && <p>Errore: {error}</p>}
-
-     
+      
       <Row>
         {songs.map((song) => (
           <Col md={4} key={song.id} className="mb-4">
