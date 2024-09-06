@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Card, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import { setCurrentSong, toggleLikeSong } from '../redux/Slice/SongSlice';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Library = () => {
@@ -21,7 +22,7 @@ const Library = () => {
             <Row>
               {likedSongs.map((song) => (
                 <Col md={4} key={song.id} className="mb-4">
-                  <Card className="bg-dark text-white rounded-0 shadow">
+                  <Card className="bg-dark text-dark rounded-0 shadow">
                     <Card.Img variant="top" src={song.album.cover_medium} />
                     <Card.Body>
                       <Card.Title>{song.title}</Card.Title>

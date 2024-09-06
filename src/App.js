@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MyNavbar from './Components/MyNavbar';
 import Home from './Components/Home';
 import Search from './Components/Search';
@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <MyNavbar />
       <div className="container mt-4">
         <Routes>
@@ -21,7 +21,7 @@ const App = () => {
         <SongList />
         <Player />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 };
 
