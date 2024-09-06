@@ -1,20 +1,26 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleLikeSong } from './redux/songSlice';
+import { toggleLikeSong } from '../redux/Slice/SongSlice';
 
 const SingleSong = ({ song }) => {
   const dispatch = useDispatch();
-  const likedSongs = useSelector(state => state.songs.likedSongs);
-  const isLiked = likedSongs.includes(song);
+  const likedSongs = useSelector((state) => state.songs.likedSongs);
+
+  const isLiked = likedSongs.some((likedSong) => likedSong.id === song.id);
+
+  const handleLike = () => {
+    dispatch(toggleLikeSong(song));
+  };
 
   return (
-    <div className="song">
-      <h4>{song.title}</h4>
-      <button onClick={() => dispatch(toggleLikeSong(song))}>
-        {isLiked ? '❤' : '♡'}
+    <div>
+      <h3>{song.title}</h3>
+      <p>{song.artist.name}</p>
+      <button onClick={handleLike}>
+        {isLiked ? 'Unlike' : 'Like'}
       </button>
     </div>
   );
 };
 
-export default SingleSong;
+export default SingleSong;

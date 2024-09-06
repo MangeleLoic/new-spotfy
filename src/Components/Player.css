@@ -1,0 +1,40 @@
+.player-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99; 
+    background-color: #121212; 
+    padding: 10px;
+  }
+  
+  .card {
+    border-radius: 0;
+  }
+  
+  .card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn-success {
+    background-color: #1db954; 
+    border-color: #1db954;
+  }
+  
+  .btn-success:hover {
+    background-color: #1ed760; 
+    border-color: #1ed760;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d; 
+    border-color: #6c757d;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268; 
+    border-color: #545b62;
+  }
+  
